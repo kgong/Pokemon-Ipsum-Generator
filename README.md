@@ -1,0 +1,1 @@
+Generates filler text with latin and pokemon names (only the first 150!).
