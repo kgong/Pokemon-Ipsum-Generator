@@ -1,1 +1,1 @@
-Generates filler text with latin and pokemon names (only the first 150!).
+Generates filler text with latin and pokemon names (only the first 150!). Currently hosted at http://www.ocf.berkeley.edu/~kgong/PokemonIpsum/.
