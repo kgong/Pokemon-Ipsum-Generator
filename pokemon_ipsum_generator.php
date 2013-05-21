@@ -6,7 +6,6 @@
 //================================END OF PARAMETERS=================================
 
 $type = $_POST["type"];
-echo $type;
 $number_of_paragraphs = $_POST["number"];
 if ($_POST["start"] == 'yes') {
 	$start_with_lorum = true;
