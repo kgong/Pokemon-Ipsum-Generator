@@ -22,11 +22,13 @@ class PokemonIpsumGenerator {
 			'consectetur', 'adipisicing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'ut', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'ut', 'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure', 'dolor', 'in', 'reprehenderit', 'in', 'voluptate', 'velit', 'esse', 'cillum', 'dolore', 'eu', 'fugiat', 'nulla', 'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non', 'proident', 'sunt', 'in', 'culpa', 'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum', 'consectetur', 'adipisicing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'ut', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'ut', 'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure', 'dolor', 'in', 'reprehenderit', 'in', 'voluptate', 'velit', 'esse', 'cillum', 'dolore', 'eu', 'fugiat', 'nulla', 'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non', 'proident', 'sunt', 'in', 'culpa', 'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum', 'consectetur', 'adipisicing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'ut', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'ut', 'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute'
 			);
 
-
-		if ($type == 'pokemon-and-filler')
+		if ($type == 'mix') {
 			$words = array_merge($pokemon, $filler);
-		else
+		} elseif ($type == 'filler') {
+			$words = $filler;
+		} else {
 			$words = $pokemon;
+		}
 		shuffle($words);
 		return $words;
 
@@ -42,7 +44,6 @@ class PokemonIpsumGenerator {
 		$includeComma = $length >= 7 && rand(0,2) > 0;
 
 		$words = $this->GetWords($type);
-
 		if (count($words) > 0)
 		{
 			// Capitalize the first word.
@@ -90,11 +91,10 @@ class PokemonIpsumGenerator {
 	}
 
 	public function Make_Some_Pokemon_Filler(
-		$type = 'pokemon-and-filler', 
+		$type = 'mix', 
 		$number_of_paragraphs = 5, 
 		$start_with_lorem = true, 
 		$number_of_sentences = 0) {
-
 		$paragraphs = array();
 		if ($number_of_sentences > 0)
 			$number_of_paragraphs = 1;
