@@ -19,4 +19,5 @@ $pokemon_filler = $pokemon_ipsum_generator->Make_Some_Pokemon_Filler($type, $num
 
 foreach ($pokemon_filler as $curr) {
 	echo $curr; ?> <br>
+	<br>
 <?php } ?>
